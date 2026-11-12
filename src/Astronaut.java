@@ -14,7 +14,7 @@ public class Astronaut {
     public int dy;                    //the speed of the hero in the y direction
     public int width;
     public int height;
-    public boolean isAlive;            //a boolean to denote if the hero is alive or dead.
+    public boolean isAlive;//boolean to denote if the hero is alive or dead.
 
 
     // METHOD DEFINITION SECTION
