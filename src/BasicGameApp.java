@@ -113,9 +113,28 @@ public class BasicGameApp implements Runnable {
 		astro.move();
 		astro2.move();
         astro3.move();
+        crashing();
 
 	}
-	
+
+    public void crashing (){
+        if(astro.hitbox.intersects(astro2.hitbox) && astro2.isCrashing==false){
+            System.out.println("crash");
+
+            //make astronaut bigger
+            astro.height = astro.height+5;
+            astro.isCrashing = true;
+
+            //make them go faster
+            astro.dy = astro.dy + 5;
+        }
+
+        if(!astro.hitbox.intersects(astro2.hitbox)) { //are astro and astro2 not touching
+            astro.isCrashing = false;
+        }
+        }
+
+
    //Pauses or sleeps the computer for the amount specified in milliseconds
    public void pause(int time ){
    		//sleep
@@ -167,6 +186,8 @@ public class BasicGameApp implements Runnable {
 		g.drawImage(astroPic, astro.xpos, astro.ypos, astro.width, astro.height, null);
 		g.drawImage(astroPic, astro2.xpos, astro2.ypos, astro2.width, astro2.height, null);
         g.drawImage(astroPic, astro3.xpos, astro3.ypos, astro3.width, astro3.height, null);
+        g.drawRect(astro.hitbox.x, astro.hitbox.y, astro.hitbox.width, astro.hitbox.height);
+        g.drawRect(astro2.hitbox.x, astro2.hitbox.y, astro2.hitbox.width, astro2.hitbox.height);
 
 		//end coding here
 		g.dispose();
