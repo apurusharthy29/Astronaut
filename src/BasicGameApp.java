@@ -25,6 +25,9 @@ import javax.swing.JPanel;
 
 public class BasicGameApp implements Runnable {
 	public int randDY;
+    public int randDX;
+    public int randXPos;
+    public int randYPos;
 
    //Variable Definition Section
    //Declare the variables used in the program 
@@ -46,6 +49,7 @@ public class BasicGameApp implements Runnable {
    //These are things that are made up of more than one variable type
 	public Astronaut astro;
 	public Astronaut astro2;
+    public Astronaut astro3;
 
 
    // Main method definition
@@ -68,10 +72,18 @@ public class BasicGameApp implements Runnable {
 		astroPic = Toolkit.getDefaultToolkit().getImage("astronaut.png"); //load the picture
 		astro = new Astronaut(10,100);
 		astro2 = new Astronaut(100,600);
+        astro3 = new Astronaut(500,500);
 
 		astro.dx = 5;
 		randDY = (int) (Math.random() * 10) +1;
 		astro2.dy = randDY;
+
+
+        astro3.dy = randDY;
+        randDX = (int) (Math.random() * 10) +1;
+        astro3.dx = randDX;
+        astro3.xpos = randXPos;
+        astro3.ypos = randYPos;
 	}// BasicGameApp()
 
    
@@ -99,6 +111,7 @@ public class BasicGameApp implements Runnable {
       //calls the move( ) code in the objects
 		astro.move();
 		astro2.move();
+        astro3.move();
 
 	}
 	
@@ -152,6 +165,7 @@ public class BasicGameApp implements Runnable {
       //draw the image of the astronaut
 		g.drawImage(astroPic, astro.xpos, astro.ypos, astro.width, astro.height, null);
 		g.drawImage(astroPic, astro2.xpos, astro2.ypos, astro2.width, astro2.height, null);
+        g.drawImage(astroPic, astro3.xpos, astro3.ypos, astro3.width, astro3.height, null);
 
 		//end coding here
 		g.dispose();
