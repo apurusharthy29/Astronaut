@@ -82,7 +82,9 @@ public class BasicGameApp implements Runnable {
         astro3.dy = randDY;
         randDX = (int) (Math.random() * 10) +1;
         astro3.dx = randDX;
+        randXPos = (int) (Math.random() * 10) +1;
         astro3.xpos = randXPos;
+        randYPos = (int) (Math.random() * 700) +1;
         astro3.ypos = randYPos;
 	}// BasicGameApp()
 
