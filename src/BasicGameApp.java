@@ -78,7 +78,6 @@ public class BasicGameApp implements Runnable {
 		randDY = (int) (Math.random() * 10) +1;
 		astro2.dy = randDY;
 
-
         astro3.dy = randDY;
         randDX = (int) (Math.random() * 10) +1;
         astro3.dx = randDX;
